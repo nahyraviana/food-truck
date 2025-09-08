@@ -1,5 +1,5 @@
 {
-    "cSpell.words": [
-        "Centerville"
-    ]
+  "cSpell.words": ["Centerville"],
+  "files.autoSave": "onWindowChange",
+  "files.readonlyFromPermissions": true
 }
