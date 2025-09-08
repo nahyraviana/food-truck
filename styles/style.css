@@ -36,7 +36,13 @@ nav {
     width: 100px;
     height: 100px;          /* make height equal to width for circle */
     border-radius: 50%;     /* round shape */
-    object-fit: cover;      /* fill circle without distortion */
+    object-fit: cover;      /* fill the circle without distortion */
+    cursor: pointer;        /* changes cursor on hover */
+    transition: transform 0.2s;
+}
+
+#logo img:hover {
+    transform: scale(1.1);  /* slight enlarge on hover */
 }
 
 /* Navigation links */
@@ -53,6 +59,16 @@ nav {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+#primaryNav li a:hover {
+    color: #fff;
+}
+
+#primaryNav li.active a {
+    color: #fff;
+    border-bottom: 2px solid #333;
 }
 
 /* Social icons container */
@@ -63,28 +79,14 @@ nav {
 }
 
 .social-icon {
-    width: 24px;
-    height: 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-/* ===== UNIFIED HOVER EFFECT FOR ALL NAV ITEMS ===== */
-nav #logo img,
-#primaryNav li a,
-.social-icon {
-    cursor: pointer;            /* pointer cursor for all items */
-    transition: transform 0.2s; /* smooth hover animation */
-}
-
-nav #logo img:hover,
-#primaryNav li a:hover,
 .social-icon:hover {
-    transform: scale(1.1);      /* slightly enlarge on hover */
-}
-
-/* Active link */
-#primaryNav li.active a {
-    color: #fff;
-    border-bottom: 2px solid #333;
+    transform: scale(1.2); /* slight enlarge on hover */
 }
 
 /* Hamburger button */
@@ -110,17 +112,9 @@ footer {
 
 footer #footer-logo {
     width: 50px;
-    height: 50px;
-    border-radius: 50%;     /* round favicon in footer */
-    object-fit: cover;
+    height: auto;
     display: block;
     margin: 0 auto 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-footer #footer-logo:hover {
-    transform: scale(1.1);
 }
 
 footer #footer-tittle {
