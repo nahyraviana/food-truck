@@ -1,0 +1,75 @@
+/* ===== NAVIGATION STYLES ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #035e0a;  /* Pretzel-themed light brown */
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* NAV LIST */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAV ITEMS */
+nav ul li {
+    margin: 0 15px;
+}
+
+/* LINKS */
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff; /* Change color on hover */
+}
+
+/* ACTIVE MENU ITEM */
+nav ul li.active a {
+    color: #fff;
+    border-bottom: 2px solid #333;
+}
+
+/* HAMBURGER BUTTON */
+#hamburguerBtn {
+    display: none; /* hide on desktop */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* MOBILE STYLING */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #035e0a;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #hamburguerBtn {
+        display: block;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
