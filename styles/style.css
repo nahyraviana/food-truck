@@ -1,75 +1,144 @@
-/* ===== NAVIGATION STYLES ===== */
+/* ===== GLOBAL STYLES ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center; /* center content horizontally */
+    text-align: center;  /* default text alignment */
+}
+
+main {
+    flex: 1; /* push footer to bottom */
+    width: 100%;
+    max-width: 1200px; /* center content with max width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ===== NAVIGATION ===== */
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #035e0a;  /* Pretzel-themed light brown */
+    width: 100%;
+    max-width: 1200px; /* center nav with max width */
+    background-color: #ffcc66;
     padding: 10px 20px;
-    font-family: Arial, sans-serif;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* NAV LIST */
-nav ul {
-    list-style: none;
+/* Logo */
+#logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Navigation links */
+#primaryNav {
     display: flex;
+    flex: 1; /* fill remaining space after logo */
+    justify-content: space-evenly; /* evenly spaced links */
+    list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
 }
 
-/* NAV ITEMS */
-nav ul li {
-    margin: 0 15px;
-}
-
-/* LINKS */
-nav ul li a {
+/* Links */
+#primaryNav li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #fff; /* Change color on hover */
+#primaryNav li a:hover {
+    color: #fff;
 }
 
-/* ACTIVE MENU ITEM */
-nav ul li.active a {
+/* Active link */
+#primaryNav li.active a {
     color: #fff;
     border-bottom: 2px solid #333;
 }
 
-/* HAMBURGER BUTTON */
+/* Hamburger button */
 #hamburguerBtn {
-    display: none; /* hide on desktop */
+    display: none;
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
 }
 
-/* MOBILE STYLING */
+/* ===== FOOTER ===== */
+footer {
+    background-color: #ffcc66;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* center horizontally */
+    box-sizing: border-box;
+}
+
+footer #footer-logo {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+footer #footer-tittle {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer #info p,
+footer #info a {
+    margin: 5px 0;
+    color: #333;
+    text-decoration: none;
+}
+
+footer #info a:hover {
+    text-decoration: underline;
+}
+
+footer #footer-info {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-    nav ul {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    #primaryNav {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #035e0a;
+        background-color: #ffcc66;
+        padding: 10px 0;
     }
 
-    nav ul li {
+    #primaryNav li {
         margin: 10px 0;
         text-align: center;
     }
 
     #hamburguerBtn {
         display: block;
+        margin-left: auto;
     }
 
-    nav ul.show {
+    #primaryNav.show {
         display: flex;
     }
 }
